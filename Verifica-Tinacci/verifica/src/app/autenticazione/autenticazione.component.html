@@ -1,0 +1,36 @@
+<div *ngIf="showLogin">
+    <h1>LOGIN</h1> 
+    <mat-form-field>
+        <mat-label>Username:</mat-label>
+        <input matInput [(ngModel)]="newUtente.username">
+    </mat-form-field> 
+<br>
+<mat-form-field>
+    <mat-label>Password:</mat-label>
+    <input matInput [(ngModel)]="newUtente.password">
+</mat-form-field> 
+<br>
+<div class="example-label"></div>
+<div class="example-button-row">
+<button mat-stroked-button (click)="login()">Accedi</button>
+</div>
+<br>
+<label>
+    <div class="example-label"></div>
+    <div class="example-button-row">
+    <button mat-stroked-button (click)="show()">Registrati</button>
+    </div>
+</label>
+</div>
+
+
+<div *ngIf="showForm">
+    <h1>REGISTER</h1> 
+    <label>Scegli un nome: <input type="text" [(ngModel)]="newUtente.username" required></label>
+    <br>
+    <label>Scegli una password: <input type="text" [(ngModel)]="newUtente.password" required></label>
+    <br>
+    <button (click)="register()">Salva</button>
+</div>
+
+<p class="messaggio">{{messaggio}}</p>
